@@ -1,0 +1,55 @@
+@keyframes blink {
+    0% { 
+        height: 100%;
+        margin-top: 0;
+    }
+    50% { 
+        height: 2%; 
+        margin-top: 55%;
+    }
+    100% { 
+        height: 100%; 
+        margin-top: 0;
+    }
+}
+
+
+
+@keyframes speaking {
+    0% {
+      width: 34%;
+      height: 20%;
+      border-radius: 50%;
+      border-top: 12vw solid;
+    }
+    20% {
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      border-top: 4vw solid;
+    }
+    40% {
+      width: 25%;
+      height: 6%;
+      border-radius: 50%;
+      border-top: 2vw solid;
+    }
+    60% {
+      width: 20%;
+      height: 2%;
+      border-radius: 50%;
+      border-top: 2vw solid;
+    }
+    60% {
+      width: 30%;
+      height: 20%;
+      border-radius: 50%;
+      border-top: 3vw solid;
+    }
+    100% {
+      width: 34%;
+      height: 20%;
+      border-radius: 50%;
+      border-top: 12vw solid;
+    }
+  }
