@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :class="{ nobg: nobg }">
     <div id="Clouds">
     <div class="Cloud Foreground"></div>
     <div class="Cloud Background"></div>
@@ -34,10 +34,13 @@
 <script>
 export default {
   name: 'Home',
+  props: [
+    'nobg',
+  ],
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .home {
   height: 100%;
@@ -46,6 +49,10 @@ export default {
   background: #FFF;
   z-index: 0;
   opacity: .3;
+
+  &.nobg {
+    background: transparent;
+  }
 }
 
 #Clouds {
@@ -311,21 +318,5 @@ export default {
 }
 .Cloud.Background {
   background-image: url(../assets/bg-cloud-small.png);
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
-body {
-  color: #fff;
-  background-color: #fd940a;
-  background-image: radial-gradient(circle, #f9a72b 0%, #fa9026 70%, #fb6c1f 100%);
 }
 </style>

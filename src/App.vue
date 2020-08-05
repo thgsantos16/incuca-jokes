@@ -1,7 +1,8 @@
 <template>
   <div id="app"
        :class="$store.getters.MOOD"
-       @click="setMood">
+       @click="setMood"
+       :style="{ background: $store.getters.MOOD != 'neutral' ? '#111' : '#EEE' }">
     <div class="container-fluid full">
       <div class="inner">
         <div class="face">
@@ -16,7 +17,9 @@
       </div>
     </div>
 
-    <router-view/>
+    <transition name="fade" appear mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -96,12 +99,16 @@ export default {
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
 #app {
+  transition: all 0.5s;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #DDD;
+  background-color: #EEE;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .full {
@@ -144,7 +151,7 @@ export default {
                   animation: blink .52s;
                 }
 
-                &.bad {
+                &.bad, &.good {
                   background-color: #FFF;
                 }
 
@@ -174,7 +181,8 @@ export default {
               border-radius: 50%;
               margin-top: -4%;
               transform: rotateX(180deg);
-              border-top: 4vw solid #444;
+              border-top: 4vw solid #FFF;
+              color: #FFF;
             }
 
             &.speaking {
