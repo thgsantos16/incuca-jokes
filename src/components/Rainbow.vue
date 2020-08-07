@@ -31,9 +31,9 @@ export default class Rainbow extends Vue {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    opacity: .34;
+    opacity: 0;
     padding-top: 20vh;
-    animation: appear 10s 1;
+    animation: appear 16s 1;
     filter: blur(10px);
 
     span {
@@ -50,17 +50,21 @@ export default class Rainbow extends Vue {
 }
 
 @keyframes appear {
-  from {
+  0% {
     transform: rotateZ(-180deg);
     margin: 70vh 0 0 -130vw;
     opacity: 0;
     filter: blur(120px);
   }
-  to {
+  50% {
     transform: rotateZ(0deg);
     margin: 0;
     opacity: .34;
     filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(100px);
   }
 }
 

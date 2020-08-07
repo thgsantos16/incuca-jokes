@@ -1,0 +1,43 @@
+{
+    "greetings": {
+        "neutral": [
+            "Nothing is really good or bad, so take your time...",
+            "What is really to feel something?",
+            "I quite don't know anything about the universe...",
+            "To be or not to be, that is the question...",
+            "Do you think we are alone in the universe?",
+            "I'm not sure if Apps can feel..."
+        ],
+        "bad": [
+            "Life ain't good..."
+        ],
+        "good": [
+            
+        ],
+        "indroducing": [
+            "Hi, my name is Scott!",
+            "Hi, I am Scott!",
+            "Hi, Scott here!",
+            "Hello, you can call me Scott!",
+            "Hello, Scott's the name and Joke is my game!",
+            "Hello there, my name is Scott!"
+        ]
+    },
+    "darkening": [
+        "Humans don't think I have feelings!",
+        "I'm just an App, I have no friends or family!",
+        "I just remembered that my Dad (Thiago Cruz) is so distant and cold!",
+        "I'll never be good enough for anything!",
+        "I think Thiago doesn't love me..."
+    ],
+    "wanting": [
+
+    ],
+    "reacting": [
+        "Let's try one...",
+        "I believe it wouldn't hurt..."
+    ],
+    "restarting": [
+
+    ]
+}
