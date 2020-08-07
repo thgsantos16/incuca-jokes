@@ -218,8 +218,8 @@ export default {
       }
 
       if (this.step === 5) {
-        this.step = 2;
         if (this.happy) {
+          this.step = 2;
           this.$store.dispatch('stopUspeaking'); // Ends User's dialog
           this.$router.push('/neutral');
           this.$store.dispatch('setMood', 'neutral');
