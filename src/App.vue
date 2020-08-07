@@ -48,6 +48,13 @@
                    v-if="$store.getters.USPEAKING"
                    @finished="stopUspeaking" />
     </transition>
+
+    <!-- This asks the user to calm down a little -->
+    <transition name="fade" appear mode="out-in">
+      <div class="alert-text" v-if="showAlert">
+        Wait, he's not happy enough yet!
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -78,6 +85,7 @@ export default {
       currentJoke: '',
       manual: false,
       happy: false,
+      showAlert: false,
     };
   },
   computed: {
@@ -225,6 +233,8 @@ export default {
           this.$store.dispatch('setMood', 'neutral');
           this.greeting();
           this.happy = false;
+        } else {
+          this.showAlertFunction();
         }
       }
 
@@ -262,8 +272,15 @@ export default {
       setTimeout(() => {
         this.$store.dispatch('setMood', 'good');
         this.$router.push('/happy');
-        setTimeout(() => { this.happy = true; }, 20000);
+        setTimeout(() => { this.happy = true; }, 18000);
       }, 3000);
+    },
+    showAlertFunction() {
+      this.showAlert = true;
+
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 2000);
     },
   },
 };
@@ -361,7 +378,7 @@ export default {
               border-radius: 50%;
               margin-top: 10%;
               border-top: 0vw solid #FFF;
-              box-shadow: 0px 1vh 0 0 inset #FFF;
+              box-shadow: 0px 1.6vh 0 0 inset #FFF;
               color: #FFF;
             }
 
@@ -380,6 +397,17 @@ export default {
         }
     }
   }
+}
+
+.alert-text {
+  background-color: #FFF;
+  position: fixed;
+  bottom: 10%;
+  min-width: 30%;
+  padding: 16px;
+  box-shadow: 0 0 16px 0px #00000044;
+  border-radius: 12px;
+  right: 10%;
 }
 
 @import "sass/animations";
