@@ -1,4 +1,4 @@
-# incuca
+# Scott Screen App
 
 My name is Scott Screen, I'm a cool App designed by Thiago Cruz, a.k.a. Dad, to help him get an awesome job at Incuca!
 Make yourself at home, try some clicks around and I hope you will have fun!
